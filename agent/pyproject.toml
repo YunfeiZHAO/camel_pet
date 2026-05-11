@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "camel-pet-agent"
+version = "0.0.1"
+description = "Camel Pet sidecar agent"
+authors = ["Camel Pet <dev@camelpet.local>"]
+readme = "README.md"
+packages = [{ include = "camel_pet_agent" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+fastapi = ">=0.115"
+"uvicorn" = { version = ">=0.32", extras = ["standard"] }
+camel-ai = ">=0.2.16"
+anthropic = ">=0.40"
+python-dotenv = ">=1.0"
+anyio = ">=4.4,<4.13"
+"mcp" = { version = ">=1.0", extras = ["cli"] }
+socksio = ">=1.0"
+pyperclip = ">=1.9"
+mss = ">=9.0"
+Pillow = ">=10.0"
+ipykernel = "^7.2.0"
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = ">=6.11"
+
+[tool.poetry.scripts]
+camel-agent = "camel_pet_agent.server:main"
+
+[build-system]
+requires = ["poetry-core>=1.9"]
+build-backend = "poetry.core.masonry.api"
